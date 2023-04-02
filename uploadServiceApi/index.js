@@ -17,10 +17,10 @@ const addTagsToRequest = (formDataBody, tags) => {
     });
 }
 
-export const uploadImg = async (imageObj) => {
+export const uploadImg = async (imageObj, imagesPath) => {
     try {
         const formDataBody = new FormData();
-        formDataBody.append('image', imageToBuffer(`images/${imageObj.name}`));
+        formDataBody.append('image', imageToBuffer(`${imagesPath}/${imageObj.name}`));
         formDataBody.append('user[name][firstName]', "hadar");
         formDataBody.append('user[name][lastName]', "vaknin");
         formDataBody.append('user[genesisId]', "123");
